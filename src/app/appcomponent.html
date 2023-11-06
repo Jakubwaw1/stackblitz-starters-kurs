@@ -1,0 +1,21 @@
+<h1>Liczba kursów 3</h1>
+<ol>
+  <li>Programowanie w C#</li>
+  <li>Angular dla początkujączych</li>
+  <li>Kurs Django</li>
+</ol>
+<form #formularz="ngForm">
+  Imie i nazwisko<br />
+  <input
+    type="text"
+    [(ngModel)]="imieinazwisko"
+    name="imieinazwisko"
+    required
+    #imieinazwiskoForm="ngModel"
+  /><br />
+  Numer kursu<br />
+  <input type="number" [(ngModel)]="numer" min="1" max="3" required />
+  <button type="submit" [disabled]="!formularz.form.valid">
+    Zapisz sie do kursu
+  </button>
+</form>
